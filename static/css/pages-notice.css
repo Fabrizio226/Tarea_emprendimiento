@@ -1,0 +1,9 @@
+.pages-backend-notice {
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border-left: 4px solid #d59b24;
+    border-radius: 0.5rem;
+    background: #fff7e2;
+    color: #493811;
+    line-height: 1.5;
+}
