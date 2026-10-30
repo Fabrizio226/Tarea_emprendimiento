@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cinzel:wght@400..900&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Flamenco:wght@300;400&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* Reinicio de los estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+:root {
+    --background-color: white;
+    --text-title-color: #053D4E;
+    --text-color: #32363b;
+    --icon-color: #32363b;
+    --menu-color: #707780;
+    --text-selected-color: #355cc0;
+    --background-selected: #ebf0ff;
+    --background-hover: #f7f9fa;
+    --border-color: #e6e9ed;
+    --header-height: 60px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #CAC6C6;
+}
+
+.green {
+    color: green;
+}
+
+header {
+    gap: 5px;
+    z-index: 200;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centrado vertical */
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.left h1 {
+    color: var(--text-title-color);
+    font-size: 1.5rem;
+}
+
+.menu-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    width: 1.5rem;
+    height: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu div {
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--menu-color);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.menu.menu-toggle div:first-child {
+    width: 40%;
+    transform: rotate(-35deg) translate(-30%, 175%);
+}
+
+.menu.menu-toggle div:last-child {
+    width: 40%;
+    transform: rotate(35deg) translate(-30%, -160%);
+}
+
+.right ul {
+    display: flex;
+    align-items: center;
+}
+
+.right li {
+    list-style: none;
+}
+
+.right a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+
+
+.right a {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.right a:hover,
+.right a.active {
+    background-color: var(--background-hover);
+    color: var(--text-selected-color);
+    box-shadow: 2px 2px 4px rgba(39, 39, 39, 0.938);
+}
+
+.sidebar.menu-toggle {
+    width: 18.75rem;
+}
+
+.sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 5rem;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    padding: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: width 0.5s ease;
+    z-index: 1000;
+}
+
+/* Contenedor de contenido */
+.container {
+    margin-top: var(--header-height);
+    margin-left: 80px;
+    padding: 10px;
+}
+
+.sidebar a {
+
+    padding: 0.9rem 0.7rem;
+    gap: 1.3rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0.09rem;
+    border-radius: 25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.40s ease;
+}
+
+.sidebar li {
+    list-style: none;
+    font-size: 20px;
+}
+
+
+.sidebar a:hover {
+    background-color: var(--background-hover);
+    color: var(--text-selected-color);
+    box-shadow: 2px 2px 4px rgba(39, 39, 39, 0.938);
+}
+
+.sidebar a.selected {
+    background-color: var(--background-selected);
+    color: var(--text-selected-color);
+}
+
+/* ////--------------------------------------------- */
+/* dialog */
+.dialog {
+    padding: 15px;
+    width: 50%;
+    height: 50%;
+    border: none;
+    border-radius: 10px;
+}
+
+.dialog[open] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.estilos ul {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.estilos li {
+    list-style: none;
+}
+
+.estilos {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.estilos a {
+    display: inline-block;
+    width: 400px;
+    text-align: center;
+    color: var(--background-selected);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.40s ease;
+}
+
+.zull {
+    background-color: var(--text-selected-color);
+    padding: 10px;
+}
+
+.verdee {
+    padding: 10px;
+    background-color: rgb(16, 173, 16);
+}
+
+.zull:hover {
+    background-color: #406ee0;
+}
+
+.verdee:hover {
+    background-color: rgb(21, 218, 21);
+}
+
+.dialog .bi-x {
+    font-size: 30px;
+    transition: 0.40s ease;
+}
+
+.dialog .bi-x:hover {
+    color: var(--text-selected-color);
+}
+
+
+.dialog button {
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff00;
+}
+
+
+/* Fin del dialog */
+
+/* Modo responsivo */
+
+@media (max-width: 768px) {
+
+    .dialog {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .estilos {
+        margin-top: 20%;
+    }
+
+    .estilos a {
+        width: 200px;
+        max-width: 300px;
+    }
+
+    .zull,
+    .verdee {
+        padding: 12px;
+    }
+}
+
+/* Fin del responsibo */
+
+/* ////--------------------------------------------- */
+
+.cancelar-hora {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    border-top: 6px solid #dc3545;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.cancelar-icono {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.cancelar-icono i {
+    font-size: 60px;
+    color: #dc3545;
+}
+
+.cancelar-hora h2 {
+    text-align: center;
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+
+.cancelar-hora p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.formulario-cancelar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.campo input,
+.campo textarea {
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 10px rgba(220,53,69,0.15);
+}
+
+.btn-cancelar {
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #dc3545;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220,53,69,0.3);
+}
+
+@media (max-width: 900px) {
+    .cancelar-hora {
+        padding: 20px;
+    }
+
+    .cancelar-icono i {
+        font-size: 45px;
+    }
+}

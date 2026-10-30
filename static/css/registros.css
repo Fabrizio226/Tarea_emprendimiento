@@ -1,0 +1,650 @@
+/* =========================
+   FUENTES Y RESET
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg-1:#0f172a;
+    --bg-2:#1e293b;
+
+    --card:rgba(255,255,255,.08);
+
+    --white:#ffffff;
+
+    --text:#f8fafc;
+    --text-soft:#cbd5e1;
+
+    --border:rgba(255,255,255,.15);
+
+    --blue:#3b82f6;
+    --green:#22c55e;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    min-height:100vh;
+
+    padding:40px;
+
+    color:var(--text);
+
+    background:
+    radial-gradient(circle at top left,#2563eb40,transparent 35%),
+    radial-gradient(circle at bottom right,#22c55e30,transparent 35%),
+    linear-gradient(
+        135deg,
+        var(--bg-1),
+        var(--bg-2)
+    );
+
+    background-attachment:fixed;
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   SCROLL
+========================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:50px;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor{
+    max-width:1600px;
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .8s ease;
+}
+
+.header h1{
+
+    font-size:2.7rem;
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.header p{
+
+    color:var(--text-soft);
+
+    font-size:1.05rem;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.volver{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:25px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.35s;
+}
+
+.volver:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 25px rgba(37,99,235,.4);
+}
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.estadisticas{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+    margin-bottom:35px;
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    transition:.4s;
+
+    box-shadow:var(--shadow);
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.02);
+
+    border-color:#60a5fa;
+}
+
+.card h3{
+
+    color:var(--text-soft);
+
+    margin-bottom:12px;
+}
+
+.numero{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    color:#60a5fa;
+}
+
+/* =========================
+   TABLA PREMIUM
+========================= */
+
+.tabla-contenedor{
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+    position:relative;
+}
+
+.tabla-contenedor::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    pointer-events:none;
+}
+
+.tabla-titulo{
+
+    padding:24px 30px;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    color:white;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+/* Scroll elegante */
+
+.responsive{
+
+    overflow:auto;
+}
+
+.responsive::-webkit-scrollbar{
+
+    height:10px;
+}
+
+.responsive::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:50px;
+}
+
+/* Tabla */
+
+table{
+
+    width:100%;
+
+    border-collapse:separate;
+
+    border-spacing:0 10px;
+
+    padding:15px;
+}
+
+/* Cabecera */
+
+thead th{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:#93c5fd;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    padding:18px;
+
+    border:none;
+}
+
+/* Filas */
+
+tbody tr{
+
+    background:
+    rgba(255,255,255,.05);
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+tbody tr:hover{
+
+    transform:translateY(-4px);
+
+    background:
+    rgba(255,255,255,.10);
+
+    box-shadow:
+    0 15px 25px rgba(0,0,0,.20);
+}
+
+/* Celdas */
+
+tbody td{
+
+    padding:18px;
+
+    border:none;
+
+    color:#f8fafc;
+
+    vertical-align:top;
+}
+
+/* Bordes redondeados por fila */
+
+tbody tr td:first-child{
+
+    border-top-left-radius:16px;
+    border-bottom-left-radius:16px;
+}
+
+tbody tr td:last-child{
+
+    border-top-right-radius:16px;
+    border-bottom-right-radius:16px;
+}
+
+/* ID */
+
+.id{
+
+    font-weight:700;
+
+    color:#60a5fa;
+}
+
+/* Nombre */
+
+.nombre{
+
+    font-weight:600;
+
+    color:white;
+}
+
+/* Curso */
+
+.curso{
+
+    color:#cbd5e1;
+}
+
+/* Correo */
+
+.correo{
+
+    color:#60a5fa;
+
+    font-weight:600;
+}
+
+/* Fecha */
+
+.fecha{
+
+    white-space:nowrap;
+
+    font-weight:500;
+
+    color:#f8fafc;
+}
+
+/* Motivo */
+
+.motivo{
+
+    max-width:450px;
+
+    line-height:1.7;
+
+    color:#e2e8f0;
+}
+
+/* Fecha registro */
+
+.fecha-registro{
+
+    color:#94a3b8;
+
+    white-space:nowrap;
+}
+
+/* Estado */
+
+.estado{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:
+    rgba(34,197,94,.15);
+
+    color:#86efac;
+
+    font-size:.85rem;
+
+    font-weight:700;
+}
+
+.estado::before{
+
+    content:"";
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+}
+
+/* Tabla vacía */
+
+.sin-datos{
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#94a3b8;
+
+    font-size:1rem;
+}
+/* =========================
+   TABLA RESPONSIVE
+========================= */
+
+.responsive{
+    overflow-x:auto;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+
+    background:
+    rgba(255,255,255,.06);
+}
+
+th{
+
+    padding:20px;
+
+    text-align:left;
+
+    color:#93c5fd;
+
+    font-size:.95rem;
+
+    font-weight:700;
+}
+
+td{
+
+    padding:20px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    color:#f8fafc;
+}
+
+tbody tr{
+
+    transition:.3s;
+}
+
+tbody tr:hover{
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+tbody tr:hover td{
+
+    color:white;
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.correo{
+
+    color:#60a5fa;
+
+    font-weight:600;
+}
+
+.motivo{
+
+    max-width:450px;
+
+    line-height:1.6;
+
+    color:#e2e8f0;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+
+    background:
+    rgba(34,197,94,.18);
+
+    color:#86efac;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    body{
+        padding:15px;
+    }
+
+    .header h1{
+        font-size:2rem;
+    }
+
+    table{
+        min-width:1200px;
+    }
+}

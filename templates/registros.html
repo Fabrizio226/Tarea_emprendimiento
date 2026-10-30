@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de solicitud</title>
+    <link rel="stylesheet" href="../static/css/registros.css">
+    <!-- Logo -->
+     <link rel="icon" type="image/png" href="../static/images/ChatGPT Image 31 may 2026, 04_40_27 a.m..png">
+</head>
+<body>
+    <table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Mensaje</th>
+        <th>Fecha</th>
+    </tr>
+
+    {% for registro in registros %}
+    <tr>
+        <td>{{ registro[1] }}</td>
+        <td>{{ registro[2] }}</td>
+        <td>{{ registro[3] }}</td>
+        <td>{{ registro[4] }}</td>
+        <td>{{ registro[5] }}</td>
+        <td>{{ registro[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
