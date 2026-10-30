@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: lumenia
+    runtime: static
+    buildCommand: python scripts/build_pages.py --output _site
+    staticPublishPath: ./_site

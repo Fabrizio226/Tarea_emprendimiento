@@ -23,3 +23,9 @@ Para generar la carpeta de publicación que usa el workflow:
 ```powershell
 python scripts\build_pages.py --output _site
 ```
+
+## Publicar en Render
+
+El archivo `render.yaml` configura un **Static Site**. En Render, crea un Blueprint desde este repositorio para aplicar esa configuración. Si ya creaste un **Web Service**, crea un Static Site nuevo: un Web Service intenta instalar Flask desde `Pipfile` y puede fallar antes de construir el sitio.
+
+La configuración publica `_site` y no ejecuta la aplicación Flask ni SQLite.
