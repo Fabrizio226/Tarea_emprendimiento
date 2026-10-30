@@ -83,7 +83,9 @@ def build(output_dir: Path) -> None:
             encoding="utf-8",
         )
 
-    shutil.copytree(ROOT / "static", output_dir / "static", dirs_exist_ok=True)
+    static_dir = ROOT / "static"
+    if output_dir / "static" != static_dir:
+        shutil.copytree(static_dir, output_dir / "static", dirs_exist_ok=True)
     (output_dir / ".nojekyll").touch()
     print(f"Sitio estático generado en {output_dir}")
 
@@ -93,8 +95,8 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=ROOT / "_site",
-        help="Directorio de salida (predeterminado: _site)",
+        default=ROOT,
+        help="Directorio de salida (predeterminado: raíz del repositorio)",
     )
     args = parser.parse_args()
     build(args.output.resolve())

@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.x"
       - name: Build static site
-        run: python scripts/build_pages.py
+        run: python scripts/build_pages.py --output _site
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

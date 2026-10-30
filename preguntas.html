@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- Inicio de la cabeza de la pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumenia</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/preguntas.css">
+    <!-- Boostrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="static/css/pages-notice.css">
+</head> <!-- Fin d ela cabeza de la pagina -->
+ <header> <!-- Inicio de header -->
+        <div class="left"> <!-- Inicio de left -->
+            <div class="menu-container"> <!-- Inicio de menu-container -->
+                <div class="menu" id="menu"> <!-- Inicio menu -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> <!-- Fin menu -->
+            </div> <!-- Fin de menu-container -->
+            <div class="brand"> <!-- Inicio de breand -->
+                <h1 class="logo"><span class="green">L</span>umenia</h1>
+            </div> <!-- Fin de breand -->
+        </div> <!-- Fin de left -->
+        <div class="right"> <!-- inicio de right -->
+            <ul> <!-- Inicio de ul -->
+                <li><a href="#"><i class="bi bi-bell"></i></a></li>
+                <li><a href="#"><i class="bi bi-person"></i></a></li>
+            </ul> <!-- Fin de ul -->
+        </div> <!-- Fin de right -->
+    </header> <!-- Fin de header -->
+    <aside class="sidebar" id="sidebar">
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="bi bi-house"></i><span>Inicio</span></a></li>
+            <li><a href="agendar-hora.html"><i class="bi bi-envelope-plus"></i><span>Agendar Hora</span></a></li>
+            <li><a href="cancelar-hora.html"><i class="bi bi-envelope-dash"></i><span>Cancelar Hora</span></a></li>
+            <li><a href="horarios.html"><i class="bi bi-calendar-event"></i><span>Horarios disponibles</span></a></li>
+            <li><a href="ayuda.html"><i class="bi bi-chat"></i><span>Ayuda</span></a></li>
+            <li><a href="preguntas.html" class="selected"><i class="bi bi-patch-question"></i><span>Preguntas</span></a></li>
+        </ul>
+    </nav>
+</aside>
+    <main class="container">
+        <section class="faq-section">
+    <div class="faq-container">
+        <h2 class="faq-title">Preguntas Frecuentes</h2>
+        <p class="faq-subtitle">Todo lo que necesitas saber antes de comenzar tu proceso.</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuánto dura cada sesión?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Las sesiones individuales tienen una duración aproximada de 45 a 50 minutos. Las sesiones de pareja o familiares pueden extenderse hasta los 70-80 minutos según el caso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Es la terapia totalmente confidencial?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutamente. Todo lo conversado en sesión está protegido por el secreto profesional. La confidencialidad solo se rompe si existe un riesgo vital inminente para el paciente o terceros.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cómo sé si necesito ir al psicólogo?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>No necesitas estar en crisis para venir. Si sientes que tus emociones te sobrepasan, tienes dificultades en tus relaciones, o simplemente quieres conocerte mejor y crecer personalmente, es un buen momento.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo cancelar o reagendar mi hora?
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí, puedes hacerlo con al menos 24 horas de anticipación sin costo adicional. Esto nos permite ofrecer ese espacio a otro paciente que lo necesite.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <script src="static/js/preguntas.js"></script>
+<body>
+    
+    <script src="static/js/pages-static.js"></script>
+</body>
+</html>
