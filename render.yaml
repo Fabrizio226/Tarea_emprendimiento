@@ -2,5 +2,9 @@ services:
   - type: web
     name: lumenia
     runtime: static
-    buildCommand: python scripts/build_pages.py --output _site
+    buildCommand: >-
+      mkdir -p _site &&
+      cp index.html agendar-hora.html cancelar-hora.html preguntas.html horarios.html ayuda.html _site/ &&
+      cp -R static _site/ &&
+      touch _site/.nojekyll
     staticPublishPath: ./_site

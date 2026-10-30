@@ -26,6 +26,6 @@ python scripts\build_pages.py --output _site
 
 ## Publicar en Render
 
-El archivo `render.yaml` configura un **Static Site**. En Render, crea un Blueprint desde este repositorio para aplicar esa configuración. Si ya creaste un **Web Service**, crea un Static Site nuevo: un Web Service intenta instalar Flask desde `Pipfile` y puede fallar antes de construir el sitio.
+El archivo `render.yaml` configura un **Static Site** y copia los HTML y recursos a `_site` sin instalar paquetes ni ejecutar Python. Si ya existe el servicio, en **Settings → Build & Deploy** configura el Build Command con el comando de `render.yaml` y el Publish Directory como `_site`; los cambios en `render.yaml` se aplican automáticamente al crear o actualizar un Blueprint.
 
-La configuración publica `_site` y no ejecuta la aplicación Flask ni SQLite.
+La configuración publica `_site` y no ejecuta la aplicación Flask ni SQLite. El `Pipfile` se quitó de la raíz para evitar que Render intente instalar Flask/Pipenv al detectar el proyecto. Para ejecutar la aplicación Flask localmente, instala Flask con `python -m pip install flask`.
